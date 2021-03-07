@@ -15,15 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadStarvation2", "Thread
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crash2", "Crash2\Crash2.csproj", "{1FA79DDE-B764-43AC-896F-99AB474BD3C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deadlock2", "Deadlock2\Deadlock2.csproj", "{F544F9F2-2983-4E29-8475-094737829BDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deadlock2", "Deadlock2\Deadlock2.csproj", "{F544F9F2-2983-4E29-8475-094737829BDE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventPipes", "EventPipes", "{96ACEBA6-89F6-4BC0-BCA3-A7F0BB65F08B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventPipeListener", "EventPipeListener\EventPipeListener.csproj", "{E77E2D95-66D4-4EE7-8BEF-411BC5AC46A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventPipeListener", "EventPipeListener\EventPipeListener.csproj", "{E77E2D95-66D4-4EE7-8BEF-411BC5AC46A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{806507F6-6E13-405A-BB88-FF62CF1E6211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{806507F6-6E13-405A-BB88-FF62CF1E6211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundForClrMD", "PlaygroundForClrMD\PlaygroundForClrMD.csproj", "{EFFE9F7A-BC78-41E2-B850-1B05FE3BE748}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundForClrMD", "PlaygroundForClrMD\PlaygroundForClrMD.csproj", "{EFFE9F7A-BC78-41E2-B850-1B05FE3BE748}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Memory Issues", "Memory Issues", "{BC8A6B51-5E3A-4795-8B1C-98472E0F619D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deadlock3", "Deadlock3\Deadlock3.csproj", "{7B54C738-AB19-4FF1-A800-43CCF348B8F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,10 @@ Global
 		{EFFE9F7A-BC78-41E2-B850-1B05FE3BE748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFFE9F7A-BC78-41E2-B850-1B05FE3BE748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFFE9F7A-BC78-41E2-B850-1B05FE3BE748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B54C738-AB19-4FF1-A800-43CCF348B8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B54C738-AB19-4FF1-A800-43CCF348B8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B54C738-AB19-4FF1-A800-43CCF348B8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B54C738-AB19-4FF1-A800-43CCF348B8F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +87,7 @@ Global
 		{1FA79DDE-B764-43AC-896F-99AB474BD3C0} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 		{F544F9F2-2983-4E29-8475-094737829BDE} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 		{E77E2D95-66D4-4EE7-8BEF-411BC5AC46A7} = {96ACEBA6-89F6-4BC0-BCA3-A7F0BB65F08B}
+		{7B54C738-AB19-4FF1-A800-43CCF348B8F4} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB95D7B7-046E-43D8-B059-4BCA2F03366A}

@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysteryApp5", "Memory Issue
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysteryApp6", "Memory Issues\MysteryApp6\MysteryApp6.csproj", "{272F5F67-6D6C-4BF8-8E02-2D2DECD9FC4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighCPU", "High CPU and Threads\HighCPU\HighCPU.csproj", "{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{272F5F67-6D6C-4BF8-8E02-2D2DECD9FC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{272F5F67-6D6C-4BF8-8E02-2D2DECD9FC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{272F5F67-6D6C-4BF8-8E02-2D2DECD9FC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,6 +138,7 @@ Global
 		{BEAE1D4B-8103-4A13-811E-E9C7066F7722} = {BC8A6B51-5E3A-4795-8B1C-98472E0F619D}
 		{839DBDBE-300A-4CAD-BAFF-8159A82DA6B4} = {BC8A6B51-5E3A-4795-8B1C-98472E0F619D}
 		{272F5F67-6D6C-4BF8-8E02-2D2DECD9FC4A} = {BC8A6B51-5E3A-4795-8B1C-98472E0F619D}
+		{81EB68E6-D06D-470C-AFF3-AE75E0556B2C} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB95D7B7-046E-43D8-B059-4BCA2F03366A}

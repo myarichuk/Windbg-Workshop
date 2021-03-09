@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Crash
@@ -33,10 +34,12 @@ namespace Crash
 
         public static void Main(string[] args)
         {
+            Console.WriteLine("Process ID:" + Process.GetCurrentProcess().Id);
             Console.WriteLine("Choose exception to throw");
             Console.WriteLine("1. " + ExceptionCode.AccessViolationException);
             Console.WriteLine("2. " + ExceptionCode.DivideByZeroException);
             Console.WriteLine("3. " + ExceptionCode.StackOverflowException);
+            Console.WriteLine("4. " + nameof(NullReferenceException));
             Console.Write("Choice:");//.ecxr
             int choice = 0;
             SetErrorMode(SEM_NOGPFAULTERRORBOX);
@@ -57,6 +60,9 @@ namespace Crash
                         break;
                     case 3:
                         SomeOperationThatMayFail(() => RaiseException((uint)ExceptionCode.StackOverflowException, 0, 0, IntPtr.Zero));
+                        break;
+                    case 4:
+                        SomeOperationThatMayFail(() => throw new NullReferenceException("Ooops!"));
                         break;
                 }
             } while (choice == 0);

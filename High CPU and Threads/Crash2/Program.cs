@@ -1,21 +1,24 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Crash2
 {
-    //This shows how orphaned lock may crash the process
-    //see for explanation why: https://github.com/dotnet/runtime/issues/44071
+    //Taken from repro of this issue: https://github.com/dotnet/runtime/issues/44071
+    //This shows how a bug in the runtime can crash the
     //note: this issue is scheduled to be fixed only in .Net 6
     public class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            var locks = new object[4];
+            Console.WriteLine("Process ID:" + Process.GetCurrentProcess().Id);
+            Console.WriteLine("Press any key to start..");
+            Console.ReadKey();
+
+            var locks = new[] { new object(), new object() };
 
             for (int i = 0; i < locks.Length; i++)
-                locks[i] = new object();
-
-            for (int i = 0; i < 4; i++)
             {
                 var thread = new Thread(state =>
                 {
@@ -32,14 +35,14 @@ namespace Crash2
             GC.WaitForPendingFinalizers();
             GC.Collect(2, GCCollectionMode.Forced, true, true);
 
-            // Promote thinlock to a syncblock
             for (int i = 0; i < locks.Length; i++)
             {
+                //promote thin-lock to syncblk
                 _ = locks[i].GetHashCode();
             }
 
-            // Trigger the crash
-            for (int i = 0; i < 4; i++)
+            // trigger the crash
+            for (int i = 0; i < locks.Length; i++)
             {
                 var thread = new Thread(state =>
                 {

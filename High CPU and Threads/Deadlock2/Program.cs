@@ -11,6 +11,7 @@ namespace Deadlock2
     {
         private readonly BlockingCollection<(string item, TaskCompletionSource<string> result)> _queue =
             new BlockingCollection<(string item, TaskCompletionSource<string> result)>();
+
         private readonly Task _processItemsTask;
 
         public DatabaseFacade() => _processItemsTask = Task.Run(ProcessItems);

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crash", "High CPU and Threa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadStarvation2", "High CPU and Threads\ThreadStarvation2\ThreadStarvation2.csproj", "{DC4646EA-234A-4D01-8489-F748B744E9BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crash2", "High CPU and Threads\Crash2\Crash2.csproj", "{1FA79DDE-B764-43AC-896F-99AB474BD3C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crash2 - Demo", "High CPU and Threads\Crash2\Crash2 - Demo.csproj", "{1FA79DDE-B764-43AC-896F-99AB474BD3C0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deadlock2", "High CPU and Threads\Deadlock2\Deadlock2.csproj", "{F544F9F2-2983-4E29-8475-094737829BDE}"
 EndProject
@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysteryApp5", "Memory Issue
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysteryApp6", "Memory Issues\MysteryApp6\MysteryApp6.csproj", "{272F5F67-6D6C-4BF8-8E02-2D2DECD9FC4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighCPU", "High CPU and Threads\HighCPU\HighCPU.csproj", "{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighCPU", "High CPU and Threads\HighCPU\HighCPU.csproj", "{81EB68E6-D06D-470C-AFF3-AE75E0556B2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

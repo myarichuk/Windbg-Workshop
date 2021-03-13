@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace HighCPU
 
         static void Main(string[] args)
         {
-            Console.WriteLine($"Process ID: {Environment.ProcessId}");
+            Console.WriteLine($"Process ID: {Process.GetCurrentProcess().Id}");
 
-            for (int niceThreads = 1; niceThreads <= 10; niceThreads++)
+            for (int niceThreads = 1; niceThreads <= 5; niceThreads++)
                 new Thread(() =>
                 {
                     while (true)
@@ -25,9 +26,14 @@ namespace HighCPU
             {
                 var iEnumerablesArray = GenerateArrayOfIEnumerables();
                 List<string> result = null;
-
-                while(true)
-                    Task.Run(() => result = iEnumerablesArray.Aggregate(Enumerable.Concat).ToList());
+                int x = 0;
+                while (true)
+                {
+                    if (x++ % 2 == 0)
+                        Task.Run(() => result = iEnumerablesArray.Aggregate(Enumerable.Concat).ToList());
+                    else
+                        Thread.Sleep(500);
+                }
 
                 // just to be sure that Release mode would not omit some lines:
                 Console.WriteLine(result);
@@ -39,7 +45,7 @@ namespace HighCPU
         static IEnumerable<string>[] GenerateArrayOfIEnumerables()
         {
             return Enumerable
-                  .Range(0, 10000)
+                  .Range(0, 100000)
                   .Select(_ => Enumerable.Range(0, 1).Select(__ => MegaString))
                   .ToArray();
         }

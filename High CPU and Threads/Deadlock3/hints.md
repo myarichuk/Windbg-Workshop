@@ -13,3 +13,4 @@
 
 # Useful links
 * https://theartofdev.com/windbg-cheat-sheet/
+* https://stackoverflow.com/a/27997039/320103

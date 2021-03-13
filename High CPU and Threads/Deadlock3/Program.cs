@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
+
+
 namespace Deadlock3
 {
     //well, this is not exactly deadlock, this is livelock
@@ -29,33 +31,39 @@ namespace Deadlock3
         {
             private readonly ManualResetEventSlim _cancelEvent;
             public string Name { get; set; }
-            public bool IsHungry { get; private set; }
+            public long IsHungry;
 
             public Philosopher(string name, ManualResetEventSlim cancelEvent)
             {
                 _cancelEvent = cancelEvent;
                 Name = name ?? throw new ArgumentNullException(nameof(name));
-                IsHungry = true;
+                IsHungry = 0;
             }
 
             public void EatWith(Fork fork, params Philosopher[] philosophers)
             {
                 var random = new Random();
-                while (IsHungry && !_cancelEvent.IsSet)
+                while (Interlocked.Read(ref IsHungry) == 0 && !_cancelEvent.IsSet)
                 {
                     //don't have the spoon - patiently wait for spouse
                     if (fork.Owner != this)
                     {
+#if PRINTF_DEBUGGING
                         Console.WriteLine($"{fork.Owner.Name} is waiting -> doesn't have the fork");
+#endif
                         Thread.Sleep(1500);
                         continue;
                     }
 
                     //if someone else is hungry, insist on passing the spoon
-                    if (philosophers.Any(p => p.IsHungry))
+                    if (philosophers.Any(p => Interlocked.Read(ref p.IsHungry) == 0))
                     {
-                        var hungryPhilosopher = philosophers.OrderBy(x => random.Next()).FirstOrDefault(p => p.IsHungry) ?? throw new InvalidDataException("philosophers collection to eat with should not be empty..");
+                        var hungryPhilosopher = philosophers.OrderBy(x => random.Next())
+                            .FirstOrDefault(p => Interlocked.Read(ref p.IsHungry) == 0) ??
+                                throw new InvalidDataException("philosophers collection to eat with should not be empty..");
+#if PRINTF_DEBUGGING
                         Console.WriteLine($"Someone else is hungry, {fork.Owner.Name} passes the fork to {hungryPhilosopher.Name}");
+#endif
                         fork.Owner = hungryPhilosopher;
                         Thread.Sleep(1500);
                         continue;
@@ -63,7 +71,7 @@ namespace Deadlock3
 
                     //everyone else are not hungry, finally the owner can eat, then give the spoon to someone else...
                     fork.SignalEating();
-                    fork.Owner = philosophers.FirstOrDefault(p => p.IsHungry);
+                    fork.Owner = philosophers.FirstOrDefault(p => Interlocked.Read(ref p.IsHungry) == 0);
                 }
             }
         }

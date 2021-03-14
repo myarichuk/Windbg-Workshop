@@ -1,5 +1,5 @@
 ## Hints
-* Multiple mini-dumps taken with 5 second interval from each other may be helpful
+* Multiple mini-dumps taken with 5 second interval from each other may be helpful (procdump is a convenient way to obtain those)
 * Don't forget to load SOS extension before doing anything
 * Take a look at multiple threads in *multiple* dumps and try to see a pattern
 * Deadlock-like symptoms do not necessarily means there is a deadlock

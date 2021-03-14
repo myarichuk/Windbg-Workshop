@@ -1,54 +1,72 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
 
-namespace HighCPU
+namespace ThreadStarvation2
 {
-    class Program
+    //credit: code adapted from https://stackoverflow.com/a/8451280/320103
+    public class PriorityTest
     {
+        private volatile bool _running;
+        public PriorityTest() => _running = true;
 
-        static void Main(string[] args)
+        public bool IsRunning
         {
-            Console.WriteLine($"Process ID: {Process.GetCurrentProcess().Id}");
-
-            for (int niceThreads = 1; niceThreads <= 5; niceThreads++)
-                new Thread(() =>
-                {
-                    while (true)
-                        Thread.Sleep(500);
-                })
-                { Name = "Nice Thread #" + niceThreads }.Start();
-
-            new Thread(() =>
-            {
-                var iEnumerablesArray = GenerateArrayOfIEnumerables();
-                List<string> result = null;
-                int x = 0;
-                while (true)
-                {
-                    if (x++ % 2 == 0)
-                        Task.Run(() => result = iEnumerablesArray.Aggregate(Enumerable.Concat).ToList());
-                    else
-                        Thread.Sleep(500);
-                }
-
-                // just to be sure that Release mode would not omit some lines:
-                Console.WriteLine(result);
-            })
-            { Name = "Evil Thread" }.Start();
+            set => _running = value;
         }
 
-        private readonly static string MegaString = new string('a', 10000);
-        static IEnumerable<string>[] GenerateArrayOfIEnumerables()
+        [DllImport("kernel32")]
+        static extern int GetCurrentThreadId();
+
+        public void ThreadMethod()
         {
-            return Enumerable
-                  .Range(0, 100000)
-                  .Select(_ => Enumerable.Range(0, 1).Select(__ => MegaString))
-                  .ToArray();
+            long iterations = 0;
+
+            foreach (ProcessThread pt in Process.GetCurrentProcess().Threads)
+            {
+                int utid = GetCurrentThreadId();
+                if (utid == pt.Id)
+                    pt.ProcessorAffinity = (IntPtr)1; //ensure all threads 'fight' for specific core
+            }
+
+            while (_running)
+            {
+                iterations++;
+            }
+
+            Console.WriteLine("{0} -> priority = {1,11} -> " +
+                " iterations count = {2,13}", Thread.CurrentThread.Name,
+                Thread.CurrentThread.Priority.ToString(),
+                iterations.ToString("N0"));
         }
     }
 
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            var priorityTest = new PriorityTest();
+            var startDelegate = new ThreadStart(priorityTest.ThreadMethod);
+
+            var lowPriorityThread = new Thread(startDelegate);
+            lowPriorityThread.Name = "Low priority thread";
+            lowPriorityThread.Priority = ThreadPriority.Lowest;
+
+            for (int i = 1; i <= 2; i++)
+            {
+                var workerThread = new Thread(startDelegate);
+                workerThread.Name = "High priority thread #" + i;
+                workerThread.Priority = ThreadPriority.Highest;
+                workerThread.Start();
+            }
+
+            lowPriorityThread.Start();
+            Console.WriteLine(Process.GetCurrentProcess().Id);
+            Console.WriteLine("Running.. press any key to exit");
+            Console.ReadKey();
+            priorityTest.IsRunning = false;
+
+        }
+    }
 }

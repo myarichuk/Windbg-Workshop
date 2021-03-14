@@ -1,18 +1,13 @@
 ## Hints
-* Computation-bound algorithms can cause high-CPU
-* Computation-bound algorithms may also cause threadpool starvation
-* Sometimes ``Threads`` run parallel tasks and sometimes threadpool ``Task`` - make sure to inspect all of them
-* Check threadpool tasks for unusual activity, if "scheduled" tasks count ONLY increases, this means threadpool starvation
-* Take multiple dumps to ensure that "scheduled" task count only increases.
-*Note: MEX plugin that is mentioned in StackOverflow answer link below can be useful only if you diagnose full .Net framework dumps, it won't work for .Net Core or .Net 5*
+* Notice the CPU usage - one of the CPU cores should be used to MAXIMUM. In a more real scenario, 
+* When dealing High CPU (perhaps even 100%), usually some threads will take the most user-mode time slices
+* The threads with the most user-mode time are suspects as root-causes of being CPU bottlenecks
+* *Note that high CPU can be caused by lots of GC cycles as well*
 
 # Userful commands
-* ``!dumpasync -tasks -completed`` will show all existing tasks and their status
-* ``!runaway`` will allow ordering running threads by how long they run
-* ``!clstack`` and ``~[thread #]s`` will allow looking at stack traces of a certain thread
-* ``!eestack -short -ee`` will show stack traces of all the 'interesting' threads
-
+* ``!runaway`` will allow ordering running threads by user-mode time they spent running 
+* ``~{thread id]}`` - dispay information about a thread
 
 # Useful links
 * https://theartofdev.com/windbg-cheat-sheet/
-* https://stackoverflow.com/a/44315348/320103
+* https://improve.dk/debugging-in-production-part-1-analyzing-100-cpu-usage-using-windbg/

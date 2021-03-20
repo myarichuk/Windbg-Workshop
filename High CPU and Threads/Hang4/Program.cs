@@ -27,6 +27,7 @@ namespace Deadlock3
             }
         }
 
+        //TODO: add UML slide
         public class Philosopher
         {
             private readonly ManualResetEventSlim _cancelEvent;

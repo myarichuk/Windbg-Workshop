@@ -29,6 +29,7 @@ namespace Crash2
                 thread.Join();
             }
 
+
             // Force the thread to be collected, orphaning the lock
             // Note: the threads have no reference to GC root so they *should* be collected
             GC.Collect(2, GCCollectionMode.Forced, true, true);

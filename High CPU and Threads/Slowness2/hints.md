@@ -5,6 +5,7 @@
 * Threadpool's big queue length *may* be a symptom of an issue
 * Don't forget to load SOS, of course
 * Try to see the big picture -> what process threads are doing?
+* Possibly multiple dumps will be required to see the issue
 
 # Userful commands
 * ``!syncblk`` will show managed ``Monitor`` based locks

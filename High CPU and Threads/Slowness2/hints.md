@@ -13,5 +13,7 @@
 * ``~~[native thread id]s`` sets context to certain thread 
 * ``!eestack`` shows stack traces of all threads
 * ``!gcroot`` shows reference path from GC root to the specified object
+
 # Useful links
 * https://theartofdev.com/windbg-cheat-sheet/
+* https://michaelscodingspot.com/lock-contentions/

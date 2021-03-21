@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hang4", "High CPU and Threa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slowness", "High CPU and Threads\Slowness\Slowness.csproj", "{266EEB99-AAB3-4527-8C35-8B4E67BC5B46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slowness2", "High CPU and Threads\Slowness2\Slowness2.csproj", "{34DCD5E3-2031-4D64-BF33-D82A493A9E30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{266EEB99-AAB3-4527-8C35-8B4E67BC5B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{266EEB99-AAB3-4527-8C35-8B4E67BC5B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{266EEB99-AAB3-4527-8C35-8B4E67BC5B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DCD5E3-2031-4D64-BF33-D82A493A9E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DCD5E3-2031-4D64-BF33-D82A493A9E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DCD5E3-2031-4D64-BF33-D82A493A9E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DCD5E3-2031-4D64-BF33-D82A493A9E30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +145,7 @@ Global
 		{9D4ED4BD-72B6-4171-8C62-B0E09003C57F} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 		{5F588F2D-16E0-4C58-8C42-0729459D6D88} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 		{266EEB99-AAB3-4527-8C35-8B4E67BC5B46} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
+		{34DCD5E3-2031-4D64-BF33-D82A493A9E30} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB95D7B7-046E-43D8-B059-4BCA2F03366A}

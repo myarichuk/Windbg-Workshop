@@ -7,7 +7,7 @@ In order to try the excercises, you should do ensure your development workstatio
 ## The excercises
 For DotNext workshop "Crashes, hangs, and high CPU", we will use excercises found in the "High CPU and Threads" folder of the solution. Note that each excercise contains **hints.md**, which contains hints on how the case can be investigated and **solution.md** which contains the commands needed to investigate the issue (with explanations as well :)) 
 
-## Preparing your dev machine for the workshop
+## Preparing your dev machine for the workshop123
 1. Make sure you have .Net 4.8 developer pack and .Net 5.0 SDK are installed (https://dotnet.microsoft.com/download/visual-studio-sdks)
 2. Ensure you have Visual Studio 2019 or any IDE capable of compiling and running .Net 5.0
 3. Install [**WinDbg Preview**](https://www.microsoft.com/en-us/p/windbg-preview/9pgjgd53tn86?activetab=pivot:overviewtab) from Windows Store.

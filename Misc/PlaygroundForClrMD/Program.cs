@@ -1,4 +1,5 @@
-﻿using Microsoft.Diagnostics.Runtime;
+using Microsoft.Diagnostics.Runtime;
+using Microsoft.Diagnostics.NETCore.Client;
 using System;
 using System.Linq;
 
@@ -8,7 +9,29 @@ namespace PlaygroundForClrMD
     {
         static void Main(string[] args)
         {
-            using var dataTarget = DataTarget.LoadDump("d:\\Fibonacci.dmp");
+            Console.WriteLine("Playground for ClrMD and Diagnostics Client");
+
+            // Example 1: Use Diagnostics Client to connect to a running process
+            Console.WriteLine("Diagnostics Client: Searching for processes...");
+            var publishedProcesses = DiagnosticsClient.GetPublishedProcesses();
+            foreach (var pid in publishedProcesses)
+            {
+                try
+                {
+                    Console.WriteLine($"Found .NET process: {pid}");
+                    // Here you could use client.DumpProcess(...) to get a dump
+                    // var client = new DiagnosticsClient(pid);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error accessing process {pid}: {ex.Message}");
+                }
+            }
+
+            Console.WriteLine("\nClrMD: Provide a path to a memory dump to analyze it.");
+            // Example 2: Load a memory dump (uncomment and provide path)
+            /*
+            using var dataTarget = DataTarget.LoadDump("example.dmp");
             using var clrRuntime = dataTarget.CreateRuntime();
 
             var strings = clrRuntime.Heap.EnumerateObjects()
@@ -21,6 +44,7 @@ namespace PlaygroundForClrMD
                     $"{stringObj.AsString()}" +
                     $"{Environment.NewLine}<<<{Environment.NewLine}");
             }
+            */
         }
     }
 }

@@ -46,7 +46,7 @@ GC roots:
                 ->  000001F88025CF10 Deadlock2.MainWindow+<GetJsonFromEndpointAsync>d__5
                 ->  000001F88025D7A8 System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[System.Threading.Tasks.VoidTaskResult, System.Private.CoreLib],[Deadlock2.MainWindow+<DoLongTask>d__3, Deadlock2]]
     
-        00000088F157D410 00007FF7CF581F7B Deadlock2.MainWindow.Button_Click(System.Object, System.Windows.RoutedEventArgs) [C:\Users\User\source\repos\WindbgWorkshop\Deadlock2\MainWindow.xaml.cs @ 18]
+        00000088F157D410 00007FF7CF581F7B Deadlock2.MainWindow.Button_Click(System.Object, System.Windows.RoutedEventArgs) [C:\Users\User\source\repos\dotnet-dumpWorkshop\Deadlock2\MainWindow.xaml.cs @ 18]
             rbp-8: 00000088f157d448
                 ->  000001F8800DE5E0 System.Windows.Controls.Button
                 ->  000001F8800398F0 System.Windows.Threading.Dispatcher
@@ -73,7 +73,7 @@ GC roots:
                 ->  000001F88025CF10 Deadlock2.MainWindow+<GetJsonFromEndpointAsync>d__5
                 ->  000001F88025D7A8 System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[System.Threading.Tasks.VoidTaskResult, System.Private.CoreLib],[Deadlock2.MainWindow+<DoLongTask>d__3, Deadlock2]]
     
-        00000088F157D410 00007FF7CF581F7B Deadlock2.MainWindow.Button_Click(System.Object, System.Windows.RoutedEventArgs) [C:\Users\User\source\repos\WindbgWorkshop\Deadlock2\MainWindow.xaml.cs @ 18]
+        00000088F157D410 00007FF7CF581F7B Deadlock2.MainWindow.Button_Click(System.Object, System.Windows.RoutedEventArgs) [C:\Users\User\source\repos\dotnet-dumpWorkshop\Deadlock2\MainWindow.xaml.cs @ 18]
             rbp-8: 00000088f157d448
                 ->  000001F8800DE5E0 System.Windows.Controls.Button
                 ->  000001F8800398F0 System.Windows.Threading.Dispatcher
@@ -116,7 +116,7 @@ F157D2B0 00007ff82271a939 System.Threading.Tasks.Task.SpinThenBlockingWait(Int32
 F157D320 00007ff82271a7e7 System.Threading.Tasks.Task.InternalWaitCore(Int32, System.Threading.CancellationToken) [/_/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs @ 2788]
 F157D3A0 00007ff822712b57 System.Threading.Tasks.Task`1[[System.__Canon, System.Private.CoreLib]].GetResultCore(Boolean) [/_/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Future.cs @ 464]
 F157D3E0 00007ff822712b17 System.Threading.Tasks.Task`1[[System.__Canon, System.Private.CoreLib]].get_Result() [/_/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Future.cs @ 439]
-F157D410 00007ff7cf581f7b Deadlock2.MainWindow.Button_Click(System.Object, System.Windows.RoutedEventArgs) [C:\Users\User\source\repos\WindbgWorkshop\Deadlock2\MainWindow.xaml.cs @ 18]
+F157D410 00007ff7cf581f7b Deadlock2.MainWindow.Button_Click(System.Object, System.Windows.RoutedEventArgs) [C:\Users\User\source\repos\dotnet-dumpWorkshop\Deadlock2\MainWindow.xaml.cs @ 18]
 F157D460 00007ff7cf5610a3 System.Windows.EventRoute.InvokeHandlersImpl(System.Object, System.Windows.RoutedEventArgs, Boolean) [/_/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/EventRoute.cs @ 155]
 F157D520 00007ff7cf560214 System.Windows.UIElement.RaiseEventImpl(System.Windows.DependencyObject, System.Windows.RoutedEventArgs)
 F157D580 000000005db91425 System.Windows.UIElement.RaiseEvent(System.Windows.RoutedEventArgs) [/_/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Generated/UIElement.cs @ 419]

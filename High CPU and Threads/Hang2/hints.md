@@ -18,4 +18,4 @@
 # Useful links
 * https://theartofdev.com/windbg-cheat-sheet/
 * http://www.graymatterdeveloper.com/2020/02/12/setting-up-windbg/
-* https://github.com/lowleveldesign/debug-recipes/blob/master/debugging-using-windbg/sosex.help.txt
+* https://github.com/lowleveldesign/debug-recipes/blob/master/debugging-using-dotnet-dump/sosex.help.txt

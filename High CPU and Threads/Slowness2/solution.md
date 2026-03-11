@@ -137,10 +137,10 @@ OS Thread Id: 0x4634 (11)
 FD925BF008 00007ffff6f0cc94 [HelperMethodFrame: 000000fd925bf008] 
 FD925BF120 00007fff19978e3b System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].Resize(Int32, Boolean)
 FD925BF1B0 00007fff1978ce36 System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].TryInsert(System.__Canon, System.__Canon, System.Collections.Generic.InsertionBehavior)
-FD925BF260 00007fff199803f8 Slowness2.MegaUserCache.TryAdd(System.String, Slowness2.User) [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Slowness2\Program.cs @ 39]
-FD925BF2F0 00007fff199763e7 Slowness2.UserRepository.Get(System.String) [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Slowness2\Program.cs @ 91]
-FD925BF3A0 00007fff19975e43 Slowness2.Program+c__DisplayClass0_1.g__GetRandomUser|1() [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Slowness2\Program.cs @ 115]
-FD925BF410 00007fff19975d3c Slowness2.Program+c__DisplayClass0_1.b__2() [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Slowness2\Program.cs @ 120]
+FD925BF260 00007fff199803f8 Slowness2.MegaUserCache.TryAdd(System.String, Slowness2.User) [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Slowness2\Program.cs @ 39]
+FD925BF2F0 00007fff199763e7 Slowness2.UserRepository.Get(System.String) [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Slowness2\Program.cs @ 91]
+FD925BF3A0 00007fff19975e43 Slowness2.Program+c__DisplayClass0_1.g__GetRandomUser|1() [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Slowness2\Program.cs @ 115]
+FD925BF410 00007fff19975d3c Slowness2.Program+c__DisplayClass0_1.b__2() [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Slowness2\Program.cs @ 120]
 FD925BF450 00007fff19983951 System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(System.Threading.Thread, System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object) [/_/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs @ 300]
 FD925BF4A0 00007fff199836f7 System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread) [/_/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs @ 2352]
 FD925BF550 00007fff19983ba4 System.Threading.ThreadPoolWorkQueue.Dispatch() [/_/src/libraries/System.Private.CoreLib/src/System/Threading/ThreadPool.cs @ 677]
@@ -171,7 +171,7 @@ Thread 393c:
         000000fd91dfee28
             ->  00000225D2CED908 System.Object
 
-    000000FD91DFEFD0 00007FFF199818BA Slowness2.MegaUserCache+<>c__DisplayClass3_0.<TryAdd>b__0(System.Threading.Tasks.Task) [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Slowness2\Program.cs @ 45]
+    000000FD91DFEFD0 00007FFF199818BA Slowness2.MegaUserCache+<>c__DisplayClass3_0.<TryAdd>b__0(System.Threading.Tasks.Task) [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Slowness2\Program.cs @ 45]
         rbp-8: 000000fd91dff028
             ->  00000225D2CED908 System.Object
 
@@ -180,7 +180,7 @@ Thread 2350:
         000000fd922bf0b8
             ->  00000225D2CED908 System.Object
 
-    000000FD922BF260 00007FFF199764F5 Slowness2.MegaUserCache.TryGet(System.String, Slowness2.User ByRef) [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Slowness2\Program.cs @ 27]
+    000000FD922BF260 00007FFF199764F5 Slowness2.MegaUserCache.TryGet(System.String, Slowness2.User ByRef) [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Slowness2\Program.cs @ 27]
         rbp-8: 000000fd922bf298
             ->  00000225D2CED908 System.Object
 *** more threads here... ***

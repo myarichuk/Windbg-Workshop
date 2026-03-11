@@ -10,4 +10,4 @@
 
 # Useful links
 * https://theartofdev.com/windbg-cheat-sheet/
-* https://improve.dk/debugging-in-production-part-1-analyzing-100-cpu-usage-using-windbg/
+* https://improve.dk/debugging-in-production-part-1-analyzing-100-cpu-usage-using-dotnet-dump/

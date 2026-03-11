@@ -7,7 +7,7 @@
 
 3. Open the dumps one after another and execute the following command. Try to see a repeating pattern - livelocks typically try to repeatedly acquire a resource or wait for such resource to be freed.  
 Notice that livelock *doesn't have* to use mutexes or any other synchronization primitives.
-```windbg
+```dotnet-dump
 :006> !eestack -short -ee
 --------------------------------------------
 Thread   0

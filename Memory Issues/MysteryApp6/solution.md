@@ -1,12 +1,12 @@
 As a first step, since we are talking about a .Net app, we load SOS
 
-```windbg
+```dotnet-dump
 .loadby sos coreclr
 ```
 
 Then, since we are talking about a memory leak, we execute dumpheap -stat. We should see something like the following.
 Notice that there is nothing looks out of the ordinary, byte arrays are a bit suspicious, but still it could be some serialization action.
-```windbg
+```dotnet-dump
 !dumpheap -stat
 00007ffb55093248     4018      1092896 System.Collections.Concurrent.ConcurrentDictionary`2+Node[[System.String, System.Private.CoreLib],[Microsoft.Extensions.FileProviders.Physical.PhysicalFilesWatcher+ChangeTokenInfo, Microsoft.Extensions.FileProviders.Physical]][]
 00007ffb54ec0c68    48178      1156272 System.Object
@@ -21,7 +21,7 @@ Notice that there is nothing looks out of the ordinary, byte arrays are a bit su
 00007ffb54fcb718    95968    788403295 System.Byte[]
 ```
 Since byte arrays are suspicious, we can check them, but we won't see anything useful here. Note that it will take a while to enumerate the byte arrays.
-```windbg
+```dotnet-dump
 !gcroot -all 0000015dc64b72c8
 HandleTable:
     0000015DA7AA4168 (async pinned handle)
@@ -57,7 +57,7 @@ Termination on corruption : ENABLED
 If we take multiple dumps, we will see that the size of one of the heaps is increasing. 
 The next step would be to group by size and see what kind of allocations are there. 
 
-```windbg
+```dotnet-dump
 !heap -stat -h 0000015d85bb0000
  heap @ 0000015d85bb0000
 group-by: TOTSIZE max-display: 20
@@ -89,7 +89,7 @@ Before we continue, we will enable allocation stack tracing for the application 
 "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\"gflags /i C:\Users\User\source\repos\Memory-Leak-Investigations-Workshop\Basics\MysteryApp6\bin\Release\net5.0\MysteryApp6.exe +ust
 
 The following will *filter* heap output by size 0x28 and output pointers for the allocated blocks.
-```windbg
+```dotnet-dump
 0:011> !heap -flt s 28
     _HEAP @ 15d85bb0000
               HEAP_ENTRY Size Prev Flags            UserPtr UserSize - state
@@ -103,7 +103,7 @@ The following will *filter* heap output by size 0x28 and output pointers for the
 ```
 
 Next, we will take a look at allocation stack traces. We will see that most of those pointers have stack trace similar to the following. Notice that ``FileSystemWatcher`` allocates native memory
-```windbg
+```dotnet-dump
 0:011> !heap -p -a 0000015da8026b50
     address 0000015da8026b50 found in
     _HEAP @ 15d85bb0000
@@ -120,7 +120,7 @@ Next, we will take a look at allocation stack traces. We will see that most of t
 ```
 
 If we check FileSystemWatcher we see it has only one instance! This is definitely an unmanaged memory leak. 
-```windbg
+```dotnet-dump
 !dumpheap -stat -type FileSystemWatcher
 Statistics:
               MT    Count    TotalSize Class Name

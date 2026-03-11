@@ -1,4 +1,4 @@
-## Solution 1 (WinDBG)
+## Solution 1 (dotnet-dump)
 1. Since we see a high CPU usage and don't see symptoms of threadpool starvation or high GC usage, we should suspect either an issue with thread scheduling or some sort of CPU-bound bottleneck.
 2. We take a number of dumps (minidumps will work as well)
 ```cmd

@@ -26,7 +26,7 @@ OS Thread Id: 0x3050 (0)
         Child SP               IP Call Site
 f4fe5a0 00007fffd14d7f2d System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[System.__Canon, mscorlib]].FindEntry(Int32)
 f4fe5f0 00007fffd14d7e85 System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[System.__Canon, mscorlib]].TryGetValue(Int32, System.__Canon ByRef)
-f4fe630 00007fff75d20ebc Hang.Program+c__DisplayClass0_0.b__0(Int32) [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Hang\Program.cs @ 24]
+f4fe630 00007fff75d20ebc Hang.Program+c__DisplayClass0_0.b__0(Int32) [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Hang\Program.cs @ 24]
 f4fe6f0 00007fffd1f82058 System.Threading.Tasks.Parallel+c__DisplayClass17_0`1[[System.__Canon, mscorlib]].b__1()
 f4fe7d0 00007fffd1eafe20 System.Threading.Tasks.Task.InnerInvokeWithArg(System.Threading.Tasks.Task)
 f4fe800 00007fffd1f84216 System.Threading.Tasks.Task+c__DisplayClass176_0.b__0(System.Object)
@@ -39,7 +39,7 @@ f4feab0 00007fffd156ed46 System.Threading.Tasks.TaskScheduler.TryRunInline(Syste
 f4feb50 00007fffd1eaefaa System.Threading.Tasks.Task.InternalRunSynchronously(System.Threading.Tasks.TaskScheduler, Boolean)
 f4febe0 00007fffd1ebc3a9 System.Threading.Tasks.Parallel.ForWorker[[System.__Canon, mscorlib]](Int32, Int32, System.Threading.Tasks.ParallelOptions, System.Action`1, System.Action`2<Int32,System.Threading.Tasks.ParallelLoopState>, System.Func`4<Int32,System.Threading.Tasks.ParallelLoopState,System.__Canon,System.__Canon>, System.Func`1<System.__Canon>, System.Action`1<System.__Canon>)
 f4fecc0 00007fffd1ebb8d1 System.Threading.Tasks.Parallel.For(Int32, Int32, System.Action`1)
-f4fed40 00007fff75d209a7 Hang.Program.Main(System.String[]) [C:\Users\User\source\repos\WindbgWorkshop\High CPU and Threads\Hang\Program.cs @ 19]
+f4fed40 00007fff75d209a7 Hang.Program.Main(System.String[]) [C:\Users\User\source\repos\dotnet-dumpWorkshop\High CPU and Threads\Hang\Program.cs @ 19]
 ```
 
 We see that the thread is stuck while doing an internal operation of **Dictionary** that should be relatively short. It is likely we found an issue.

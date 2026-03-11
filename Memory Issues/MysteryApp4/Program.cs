@@ -51,10 +51,10 @@ namespace MysteryApp4
 
             var task = Task.Run(() =>
             {
-                var tl = new CloseableThreadLocal();
                 int x = 0;
                 while (!mre.IsSet)
                 {
+                    var tl = new CloseableThreadLocal();
                     Task.Run(() =>
                     {
                         tl.Set("hello!");

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace MysteryApp3
 {
-    //TODO: try implement what is described here https://github.com/dotnet/runtime/issues/25197#issuecomment-371505770
     public static class Program
     {
         static void Main(string[] args)

@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slowness2", "High CPU and T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernDiagnostics", "ModernDiagnostics\ModernDiagnostics.csproj", "{5AA8A7B5-0782-4D85-9B6A-CD51138A217A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysteryApp7", "Memory Issues\MysteryApp7\MysteryApp7.csproj", "{51CFC30A-2F9A-4E73-9C12-2066CE893C43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -285,6 +287,18 @@ Global
 		{5AA8A7B5-0782-4D85-9B6A-CD51138A217A}.Release|x64.Build.0 = Release|Any CPU
 		{5AA8A7B5-0782-4D85-9B6A-CD51138A217A}.Release|x86.ActiveCfg = Release|Any CPU
 		{5AA8A7B5-0782-4D85-9B6A-CD51138A217A}.Release|x86.Build.0 = Release|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Debug|x64.Build.0 = Debug|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Debug|x86.Build.0 = Debug|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Release|x64.ActiveCfg = Release|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Release|x64.Build.0 = Release|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Release|x86.ActiveCfg = Release|Any CPU
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -308,6 +322,7 @@ Global
 		{5F588F2D-16E0-4C58-8C42-0729459D6D88} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 		{266EEB99-AAB3-4527-8C35-8B4E67BC5B46} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
 		{34DCD5E3-2031-4D64-BF33-D82A493A9E30} = {84D8D3A6-2A41-4056-AD85-F28F0B78CCB3}
+		{51CFC30A-2F9A-4E73-9C12-2066CE893C43} = {BC8A6B51-5E3A-4795-8B1C-98472E0F619D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB95D7B7-046E-43D8-B059-4BCA2F03366A}
